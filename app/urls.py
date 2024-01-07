@@ -1,12 +1,13 @@
 from django.urls import path
 # from .views import HomeList, HomeDetail, UserList, UserDetail
 from rest_framework.routers import SimpleRouter
-from .views import HomeViewSet, UserViewSet, ListingPictureViewSet
+from .views import HomeViewSet, UserViewSet, ListingPictureViewSet, LostInformationViewSet
 
 router = SimpleRouter()
 router.register('users', UserViewSet, basename='users')
 router.register('', HomeViewSet, basename='home')
 router.register('list/picture', ListingPictureViewSet, basename='list/picture')
+router.register('list/info', LostInformationViewSet, basename='list/info/base')
 
 urlpatterns = router.urls
 

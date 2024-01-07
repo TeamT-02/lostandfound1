@@ -1,6 +1,7 @@
-from .serializers import HomeSerializers, UserSerializers, ListingPictureSerializers
+from .serializers import HomeSerializers, UserSerializers, ListingPictureSerializers, \
+    LostInformationSerializers
 from rest_framework.viewsets import ModelViewSet
-from .models import Home, Listing_Picture
+from .models import Home, Listing_Picture, Lost_Information
 from .permissions import IsAuthorOrReadOnly
 from django.contrib.auth import get_user_model
 
@@ -43,6 +44,12 @@ class UserViewSet(ModelViewSet):
 
 
 class ListingPictureViewSet(ModelViewSet):
-    permission_classes = (IsAuthorOrReadOnly,)
+    # permission_classes = (IsAuthorOrReadOnly,)
     queryset = Listing_Picture.objects.all()
     serializer_class = ListingPictureSerializers
+
+
+class LostInformationViewSet(ModelViewSet):
+    # permission_classes = (IsAuthorOrReadOnly,)
+    queryset = Lost_Information.objects.all()
+    serializer_class = LostInformationSerializers

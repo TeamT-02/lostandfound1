@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Home, Listing_Picture
+from .models import Home, Listing_Picture, Lost_Information
 from django.contrib.auth import get_user_model
 
 
@@ -19,3 +19,11 @@ class ListingPictureSerializers(serializers.ModelSerializer):
     class Meta:
         fields = ('id', 'images',)
         model = Listing_Picture
+
+
+
+class LostInformationSerializers(serializers.ModelSerializer):
+    class Meta:
+        fields = ('id', 'category', 'title', 'datelost', 'subcategory', 'brand', 'primary_color', 'Secondary_color', 'description',
+                  'location',)
+        model = Lost_Information

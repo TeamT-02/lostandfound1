@@ -16,3 +16,15 @@ class Home(models.Model):
 
 class Listing_Picture(models.Model):
     images = models.ImageField(upload_to='midea/img/listing_picture/')
+
+
+class Lost_Information(models.Model):
+    category = models.CharField(max_length=60)
+    title = models.CharField(max_length=60)
+    datelost = models.DateField()
+    subcategory = models.CharField(max_length=60)
+    brand = models.CharField(max_length=40)
+    primary_color = models.CharField(max_length=60)
+    Secondary_color = models.CharField(max_length=60)
+    description = models.TextField()
+    location = models.TextField()
