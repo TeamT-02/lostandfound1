@@ -28,3 +28,37 @@ class Lost_Information(models.Model):
     Secondary_color = models.CharField(max_length=60)
     description = models.TextField()
     location = models.TextField()
+
+    def __str__(self):
+        return self.title
+
+
+class Location_Information(models.Model):
+    address = models.CharField(max_length=80)
+    state = models.CharField(max_length=60)
+    city = models.CharField(max_length=60)
+    zipcode = models.IntegerField()
+
+    def __str__(self):
+        return self.state + " " + self.city
+
+
+class Venue(models.Model):
+    location_venue_type = models.CharField(max_length=120)
+
+    def __str__(self):
+        return self.location_venue_type
+
+
+class Venue_Details(models.Model):
+    venue_category = models.CharField(max_length=60)
+    organization_name = models.CharField(max_length=60)
+    adderss_1 = models.CharField(max_length=140)
+    adderss_2 = models.CharField(max_length=140)
+    state = models.CharField(max_length=60)
+    city = models.CharField(max_length=60)
+    zipcode = models.IntegerField()
+    phone_number = models.CharField(max_length=60)
+    fax_number = models.CharField(max_length=60)
+    website = models.CharField(max_length=250)
+    twitter = models.CharField(max_length=200)
